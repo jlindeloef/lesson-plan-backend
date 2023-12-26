@@ -57,7 +57,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = ['8000-jlindeloef-lessonplanba-h70snqa0fmk.ws-eu107.gitpod.io','localhost',
-    os.environ.get('ALLOWED_HOST'),]
+    os.environ.get('ALLOWED_HOST'),'lesson-plan.herokuapp.com',]
 
 
 # Application definition
