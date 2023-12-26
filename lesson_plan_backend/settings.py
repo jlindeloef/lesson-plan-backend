@@ -50,12 +50,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-0=0nqi%_5mdl@f=+6t4k7ak7s^^d6s^=p3q&6qo#m)_7w!^h++'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEV' in os.environ
 
-ALLOWED_HOSTS = ['8000-jlindeloef-lessonplanba-h70snqa0fmk.ws-eu107.gitpod.io']
+ALLOWED_HOSTS = ['8000-jlindeloef-lessonplanba-h70snqa0fmk.ws-eu107.gitpod.io','localhost','lesson-plan.herokuapp.com']
 
 
 # Application definition
@@ -78,6 +78,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'dj_rest_auth.registration',
+    'corsheaders',
 
 
     'profiles',
@@ -90,6 +91,7 @@ INSTALLED_APPS = [
 ]
 SITE_ID = 1
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -99,6 +101,20 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+if 'CLIENT_ORIGIN' in os.environ:
+    CORS_ALLOWED_ORIGINS = [
+        os.environ.get('CLIENT_ORIGIN')
+    ]
+else:
+    CORS_ALLOWED_ORIGIN_REGEXES = [
+        r"^https://.*\.gitpod\.io$",
+    ]
+
+CORS_ALLOW_CREDENTIALS = True
+
+JWT_AUTH_COOKIE = 'my-app-auth'
+ JWT_AUTH_REFRESH_COOKE = 'my-refresh-token'
+ JWT_AUTH_SAMESITE = 'None'
 ROOT_URLCONF = 'lesson_plan_backend.urls'
 
 TEMPLATES = [
