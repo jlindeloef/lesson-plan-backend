@@ -113,8 +113,8 @@ else:
 CORS_ALLOW_CREDENTIALS = True
 
 JWT_AUTH_COOKIE = 'my-app-auth'
- JWT_AUTH_REFRESH_COOKE = 'my-refresh-token'
- JWT_AUTH_SAMESITE = 'None'
+JWT_AUTH_REFRESH_COOKE = 'my-refresh-token'
+JWT_AUTH_SAMESITE = 'None'
 ROOT_URLCONF = 'lesson_plan_backend.urls'
 
 TEMPLATES = [
