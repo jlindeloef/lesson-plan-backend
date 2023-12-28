@@ -23,7 +23,7 @@ const NavBar = () => {
             <Nav.Link>
               <i className="fas fa-user-plus"></i>Sign up
             </Nav.Link>
-            <NavDropdown title="Categories" id="basic-nav-dropdown">
+            <NavDropdown className="dropdown" title="Categories" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
