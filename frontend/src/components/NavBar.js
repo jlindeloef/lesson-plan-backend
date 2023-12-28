@@ -41,7 +41,7 @@ const NavBar = () => {
             </NavLink>
             <NavLink
               to="/category"
-              className={styles.NavLink}
+              className={styles.NavLink} 
               activeClassName={styles.Active}
             >
               <NavDropdown className="dropdown" title="Categories" id="basic-nav-dropdown">
