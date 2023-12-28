@@ -17,9 +17,9 @@
     font-size: 16px;
     line-height: 19px;
     text-align: center;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #2142b2;
+    color: #21b234;
   }
   
   .Link {
@@ -30,7 +30,7 @@
   }
   
   .Link span {
-    color: #ff9254;
+    color: #0a56da;
   }
   
   .Container {
