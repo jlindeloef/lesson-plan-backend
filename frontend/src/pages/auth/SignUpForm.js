@@ -8,7 +8,7 @@ import appStyles from "../../App.module.css";
 import {
   Form,
   Button,
-  Image,
+  /*Image,*/
   Col,
   Row,
   Container,
@@ -115,9 +115,6 @@ const SignUpForm = () => {
               </Alert>
             ))}
           </Form>
-        </Container>
-
-        <Container className={`mt-3 ${appStyles.Content}`}>
           <Link className={styles.Link} to="/signin">
             Already have an account? <span>Sign in</span>
           </Link>
