@@ -5,31 +5,33 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 
-import Post from "./Post";
+import { useLocation } from "react-router-dom";
+import InfiniteScroll from "react-infinite-scroll-component";
+import Teacher from "./Teacher";
 import Asset from "../../components/Asset";
 
 import appStyles from "../../App.module.css";
 import styles from "../../styles/PostsPage.module.css";
-import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 
 import NoResults from "../../assets/no-results.png";
-import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
-function PostsPage({ message, filter = "" }) {
-  const [posts, setPosts] = useState({ results: [] });
+const TeachersPage = ({ message, filter = "" }) => {
+  const [teachers, setTeachers] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
+  const currentUser = useCurrentUser();
 
   const [query, setQuery] = useState("");
 
   useEffect(() => {
-    const fetchPosts = async () => {
+    const fetchTeachers = async () => {
       try {
-        const { data } = await axiosReq.get(`/posts/?${filter}search=${query}`);
-        setPosts(data);
+        const { data } = await axiosReq.get(`/artists/?${filter}search=${query}`);
+        setTeachers(data);
         setHasLoaded(true);
       } catch (err) {
         console.log(err);
@@ -38,18 +40,19 @@ function PostsPage({ message, filter = "" }) {
 
     setHasLoaded(false);
     const timer = setTimeout(() => {
-      fetchPosts();
+      fetchTeachers();
     }, 1000);
 
     return () => {
       clearTimeout(timer);
     };
-  }, [filter, query, pathname]);
+  }, [filter, query, pathname, currentUser]);
 
   return (
-    <Row className="h-100">
+    <Row className="h-100 d-flex justify-content-center">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <PopularProfiles mobile />
+        <p className="text-center">Most followed profiles.</p>
+        <PopularProfiles />
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form
           className={styles.SearchBar}
@@ -60,20 +63,22 @@ function PostsPage({ message, filter = "" }) {
             onChange={(event) => setQuery(event.target.value)}
             type="text"
             className="mr-sm-2"
-            placeholder="Search posts"
+            placeholder="Search teachers by name, location or school"
           />
         </Form>
+
         {hasLoaded ? (
           <>
-            {posts.results.length ? (
+            <h1>Teachers</h1>
+            {teachers.results.length ? (
               <InfiniteScroll
-                children={posts.results.map((post) => (
-                  <Post key={post.id} {...post} setPosts={setPosts} />
+                children={teachers.results.map((teacher) => (
+                  <Teacher key={teacher.id} {...teacher} showAll />
                 ))}
-                dataLength={posts.results.length}
+                dataLength={teachers.results.length}
                 loader={<Asset spinner />}
-                hasMore={!!posts.next}
-                next={() => fetchMoreData(posts, setPosts)}
+                hasMore={!!teachers.next}
+                next={() => fetchMoreData(teachers, setTeachers)}
               />
             ) : (
               <Container className={appStyles.Content}>
@@ -87,11 +92,8 @@ function PostsPage({ message, filter = "" }) {
           </Container>
         )}
       </Col>
-      <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
-        <PopularProfiles />
-      </Col>
     </Row>
   );
-}
+};
 
-export default PostsPage;
+export default TeachersPage;

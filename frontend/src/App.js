@@ -14,6 +14,8 @@ import ProfilePage from "./pages/profiles/ProfilePage";
 import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
+import TeachersPage from "./pages/teachers/TeachersPage";
+import TeacherCreateForm from "./pages/teachers/TeacherCreateForm";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -71,6 +73,16 @@ function App() {
             exact
             path="/profiles/:id/edit"
             render={() => <ProfileEditForm />}
+          />
+          <Route
+            exact
+            path="/teachers"
+            render={() => <TeachersPage />}
+          />
+          <Route
+            exact
+            path="/teachers/create/"
+            render={() => <TeacherCreateForm />}
           />
 
           <Route render={() => <p>Page not found!</p>} />
