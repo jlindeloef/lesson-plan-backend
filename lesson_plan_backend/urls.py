@@ -34,4 +34,5 @@ urlpatterns = [
     path('', include('followers.urls')),
     path('category/',include('category.urls')),
     path('', include('reviews.urls')),
+    path('', include('teachers.urls')),
 ]
