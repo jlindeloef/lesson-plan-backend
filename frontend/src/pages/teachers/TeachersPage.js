@@ -30,7 +30,7 @@ const TeachersPage = ({ message, filter = "" }) => {
   useEffect(() => {
     const fetchTeachers = async () => {
       try {
-        const { data } = await axiosReq.get(`/artists/?${filter}search=${query}`);
+        const { data } = await axiosReq.get(`/teachers/?${filter}search=${query}`);
         setTeachers(data);
         setHasLoaded(true);
       } catch (err) {

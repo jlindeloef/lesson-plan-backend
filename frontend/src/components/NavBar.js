@@ -49,6 +49,14 @@ const NavBar = () => {
       <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
+        to="/teachers/create"
+      >
+        <i className="fa-solid fa-file-signature" />
+        Teachers account
+      </NavLink>
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
         to="/feed"
       >
         <i className="fas fa-stream"></i>Feed
@@ -75,7 +83,7 @@ const NavBar = () => {
               activeClassName={styles.Active}
             >
               <NavDropdown className="dropdown" title="Categories" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                <NavDropdown.Item href="../teachers/create">Apply as teacher</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">
                   Another action
                 </NavDropdown.Item>
