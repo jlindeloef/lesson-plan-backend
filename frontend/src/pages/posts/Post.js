@@ -6,6 +6,8 @@ import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 import { MoreDropdown } from "../../components/MoreDropdown";
+import btnStyles from "../../styles/Button.module.css";
+import { Button } from "react-bootstrap";
 
 const Post = (props) => {
   const {
@@ -22,6 +24,7 @@ const Post = (props) => {
     updated_at,
     postPage,
     setPosts,
+    showAll,
   } = props;
 
   const currentUser = useCurrentUser();
@@ -128,6 +131,24 @@ const Post = (props) => {
           </Link>
           {comments_count}
         </div>
+        {!is_owner && (
+          <Button
+            className={btnStyles.Button}
+            onClick={() => history.push(`/reviews/${id}/create`)}
+            aria-label="create-review"
+          >
+            Leave a review
+          </Button>
+        )}
+        {showAll && (
+          <Button
+            className={btnStyles.Button}
+            onClick={() => history.push(`/reviews/${id}`)}
+            aria-label="view-reviews"
+          >
+            Teacher Reviews
+          </Button>
+        )}
       </Card.Body>
     </Card>
   );
