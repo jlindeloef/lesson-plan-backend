@@ -24,7 +24,7 @@ class Post(models.Model):
         Category, on_delete=models.PROTECT, default=1)
     content = models.TextField(blank=True)
     image = models.ImageField(
-        upload_to='images/', default='placeholder', blank=True
+        upload_to='images/', default='../default_post_pfyxaa', blank=True
     )
     image_filter = models.CharField(
         max_length=32, choices=image_filter_choices, default='normal'

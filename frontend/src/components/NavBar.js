@@ -1,15 +1,16 @@
 import React from "react";
-import { Navbar, Container, Nav } from "react-bootstrap";
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import Navbar from "react-bootstrap/Navbar";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import { NavLink } from "react-router-dom";
+import axios from "axios";
 import logo from "../assets/logo.png";
 import styles from "../styles/NavBar.module.css";
-import { NavLink } from "react-router-dom";
 import {
   useCurrentUser,
   useSetCurrentUser,
 } from "../contexts/CurrentUserContext";
 import Avatar from "./Avatar";
-import axios from "axios";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 
 const NavBar = () => {
@@ -18,24 +19,31 @@ const NavBar = () => {
 
   const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
+  // function to log user out and reset the currentuser data to null
   const handleSignOut = async () => {
     try {
       await axios.post("dj-rest-auth/logout/");
       setCurrentUser(null);
     } catch (err) {
+      setCurrentUser(null);
       console.log(err);
     }
   };
 
+  // icon to be used in navbar to add a new post  
   const addPostIcon = (
     <NavLink
       className={styles.NavLink}
       activeClassName={styles.Active}
       to="/posts/create"
     >
-      <i className="far fa-plus-square"></i>Add post
+      <i className="fas fa-plus-square" />
+      Add post
     </NavLink>
   );
+
+  // icons that should be rendered only when a user
+  // is logged in
   const loggedInIcons = (
     <>
       <NavLink
@@ -59,43 +67,32 @@ const NavBar = () => {
         activeClassName={styles.Active}
         to="/feed"
       >
-        <i className="fas fa-stream"></i>Feed
+        <i className="fas fa-stream" />
+        Feed
       </NavLink>
       <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
         to="/liked"
       >
-        <i className="fas fa-heart"></i>Liked
+        <i className="fas fa-heart" />
+        Liked
       </NavLink>
       <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
-        <i className="fas fa-sign-out-alt"></i>Sign out
+        <i className="fas fa-sign-out-alt" />
+        Sign out
       </NavLink>
       <NavLink
         className={styles.NavLink}
         to={`/profiles/${currentUser?.profile_id}`}
       >
-        <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
+        <Avatar src={currentUser?.profile_image} text={currentUser?.username} height={40} />
       </NavLink>
-      <NavLink
-              to="/category"
-              className={styles.NavLink} 
-              activeClassName={styles.Active}
-            >
-              <NavDropdown className="dropdown" title="Categories" id="basic-nav-dropdown">
-                <NavDropdown.Item href="../teachers/create">Apply as teacher</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
-                </NavDropdown.Item>
-              </NavDropdown>
-            </NavLink>
     </>
   );
+
+  // icons that should be rendered 
+  // on navbar only when usr is logged out
   const loggedOutIcons = (
     <>
       <NavLink
@@ -103,14 +100,16 @@ const NavBar = () => {
         activeClassName={styles.Active}
         to="/signin"
       >
-        <i className="fas fa-sign-in-alt"></i>Sign in
+        <i className="fas fa-sign-in-alt" />
+        Sign in
       </NavLink>
       <NavLink
         to="/signup"
         className={styles.NavLink}
         activeClassName={styles.Active}
       >
-        <i className="fas fa-user-plus"></i>Sign up
+        <i className="fas fa-user-plus" />
+        Sign up
       </NavLink>
     </>
   );
@@ -119,7 +118,7 @@ const NavBar = () => {
     <Navbar
       expanded={expanded}
       className={styles.NavBar}
-      expand="md"
+      expand="lg"
       fixed="top"
     >
       <Container>
@@ -140,9 +139,11 @@ const NavBar = () => {
               exact
               className={styles.NavLink}
               activeClassName={styles.Active}
+              aria-label="Home"
               to="/"
             >
-              <i className="fas fa-home"></i>Home
+              <i className="fas fa-home" />
+              Home
             </NavLink>
 
             {currentUser ? loggedInIcons : loggedOutIcons}
