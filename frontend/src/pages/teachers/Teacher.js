@@ -50,6 +50,24 @@ const Teacher = (props) => {
           Email:
           {email}
         </p>
+        {!is_owner && (
+          <Button
+            className={btnStyles.Button}
+            onClick={() => history.push(`/reviews/${id}/create`)}
+            aria-label="create-review"
+          >
+            Leave a review
+          </Button>
+        )}
+        {showAll && (
+          <Button
+            className={btnStyles.Button}
+            onClick={() => history.push(`/reviews/${id}`)}
+            aria-label="view-reviews"
+          >
+            Posts Reviews
+          </Button>
+        )}
       </Card.Body>
     </Card>
   );

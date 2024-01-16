@@ -8,6 +8,7 @@ import { axiosRes } from "../../api/axiosDefaults";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import btnStyles from "../../styles/Button.module.css";
 import { Button } from "react-bootstrap";
+import { Rating } from "react-simple-star-rating";
 
 const Post = (props) => {
   const {
@@ -23,6 +24,8 @@ const Post = (props) => {
     image,
     updated_at,
     postPage,
+    reviews_count,
+    average_rating,
     setPosts,
     showAll,
   } = props;
@@ -131,6 +134,16 @@ const Post = (props) => {
           </Link>
           {comments_count}
         </div>
+        <p className="text-center">
+          Rating:
+          {" "}
+          <Rating readonly initialValue={average_rating} size={25} />
+        </p>
+        <p>
+          {reviews_count}
+          {" "}
+          reviews
+        </p>
         {!is_owner && (
           <Button
             className={btnStyles.Button}
