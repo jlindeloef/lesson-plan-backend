@@ -7,6 +7,7 @@ class Teacher(models.Model):
     Teacher model, related to User
     """
     owner = models.OneToOneField(User, on_delete=models.CASCADE)
+    teacher = models.CharField(max_length=255, blank=True)
     school = models.CharField(max_length=255)
     location = models.CharField(max_length=255, blank=True)
     email = models.EmailField(null=True, blank=True)

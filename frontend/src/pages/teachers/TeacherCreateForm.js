@@ -20,12 +20,13 @@ const TeacherCreateForm = () => {
   const id = currentUser?.profile_id;
 
   const [teacherData, setTeacherData] = useState({
+    teacher: "",
     school: "",
     location: "",
     email: "",
   });
   const {
-    school, location, email, 
+    teacher, school, location, email, 
   } = teacherData;
 
   const history = useHistory();
@@ -41,9 +42,11 @@ const TeacherCreateForm = () => {
     event.preventDefault();
     const formData = new FormData();
 
+    formData.append("teacher", teacher);
     formData.append("school", school);
     formData.append("location", location);
     formData.append("email", email);
+    
 
     try {
       // make request to database to create a new artist
@@ -62,6 +65,22 @@ const TeacherCreateForm = () => {
 
   const textFields = (
     <div className="text-center">
+
+      <Form.Group>
+        <Form.Label>Teacher</Form.Label>
+        <Form.Control
+          type="text"
+          name="teacher"
+          value={teacher}
+          onChange={handleChange}
+        />
+      </Form.Group>
+      {errors?.title?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
       <Form.Group>
         <Form.Label>School</Form.Label>
         <Form.Control

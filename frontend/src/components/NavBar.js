@@ -51,7 +51,7 @@ const NavBar = () => {
         activeClassName={styles.Active}
         to="/teachers"
       >
-        <i className="fas fa-palette" />
+        <i className="fa-solid fa-graduation-cap" />
         Teachers colaboration
       </NavLink>
       <NavLink
