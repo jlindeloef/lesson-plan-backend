@@ -13,7 +13,7 @@ import Asset from "../../components/Asset";
 import appStyles from "../../App.module.css";
 import styles from "../../styles/PostsPage.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
-
+import { Link } from "react-router-dom";
 import NoResults from "../../assets/no-results.png";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
@@ -49,10 +49,12 @@ const TeachersPage = ({ message, filter = "" }) => {
   }, [filter, query, pathname, currentUser]);
 
   return (
-    <Row className="h-100 d-flex justify-content-center">
-      <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <p className="text-center">Most followed profiles.</p>
+    <Row className="h-100">
+      <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
         <PopularProfiles />
+      </Col>
+      <Col className="py-2 p-0 p-lg-2" lg={8}>
+        <PopularProfiles mobile />
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form
           className={styles.SearchBar}
@@ -70,6 +72,11 @@ const TeachersPage = ({ message, filter = "" }) => {
         {hasLoaded ? (
           <>
             <h1>Teachers</h1>
+            <p>As a teacher you register to the teachers list so other teacher can find you for colaboration.<br />
+            <Link className={styles.Link} to="/teachers/create">
+            Aren't you a teacher?<span> Sign up now!</span>
+          </Link>
+            </p>
             {teachers.results.length ? (
               <InfiniteScroll
                 children={teachers.results.map((teacher) => (

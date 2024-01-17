@@ -52,15 +52,7 @@ const NavBar = () => {
         to="/teachers"
       >
         <i className="fas fa-palette" />
-        Teachers
-      </NavLink>
-      <NavLink
-        className={styles.NavLink}
-        activeClassName={styles.Active}
-        to="/teachers/create"
-      >
-        <i className="fa-solid fa-file-signature" />
-        Teachers account
+        Teachers colaboration
       </NavLink>
       <NavLink
         className={styles.NavLink}

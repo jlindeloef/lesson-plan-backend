@@ -28,6 +28,7 @@
     display: block;
     margin: auto;
     margin-top: 15px;
+    text-decoration-line: underline;
   }
   
   .Link span {
