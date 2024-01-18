@@ -146,7 +146,7 @@ const Post = (props) => {
         </p>
         {!is_owner && (
           <Button
-            className={btnStyles.Button}
+            className={`${btnStyles.Button} ${btnStyles.Bright}`}
             onClick={() => history.push(`/reviews/${id}/create`)}
             aria-label="create-review"
           >
@@ -155,7 +155,7 @@ const Post = (props) => {
         )}
         {showAll && (
           <Button
-            className={btnStyles.Button}
+            className={`${btnStyles.Button} ${btnStyles.Bright}`}
             onClick={() => history.push(`/reviews/${id}`)}
             aria-label="view-reviews"
           >

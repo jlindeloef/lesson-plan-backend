@@ -54,7 +54,7 @@ const Teacher = (props) => {
         <p className="text-center">
           Email:
           {email}
-        </p>
+        </p> 
       </Card.Body>
     </Card>
   );

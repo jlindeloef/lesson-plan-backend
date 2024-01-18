@@ -41,7 +41,7 @@ const Profile = (props) => {
             </Button>
           ) : (
             <Button
-              className={`${btnStyles.Button} ${btnStyles.Black}`}
+              className={`${btnStyles.Button} ${btnStyles.Bright}`}
               onClick={() => handleFollow(profile)}
             >
               follow

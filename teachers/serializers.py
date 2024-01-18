@@ -30,6 +30,6 @@ class TeacherSerializer(serializers.ModelSerializer):
         model = Teacher
         fields = [
             'id', 'owner', 'is_owner', 'profile_id', 'profile_image',
-            'profile_image', 'school', 'location',
+            'profile_image', 'teacher','school', 'location',
             'email', 'created_at', 'updated_at',
         ]
