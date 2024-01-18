@@ -18,7 +18,6 @@ class PostList(generics.ListCreateAPIView):
         comments_count=Count('comment', distinct=True),
         reviews_count=Count('reviews', distinct=True),
         average_rating=Avg('reviews__rating'),
-        category_count=Count('category', distinct=True),
     ).order_by('-created_at')
     filter_backends = [
         filters.OrderingFilter,
@@ -55,5 +54,4 @@ class PostDetail(generics.RetrieveUpdateDestroyAPIView):
         comments_count=Count('comment', distinct=True),
         reviews_count=Count('reviews', distinct=True),
         average_rating=Avg('reviews__rating'),
-        category_count=Count('category', distinct=True),
     ).order_by('-created_at')

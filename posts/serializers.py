@@ -13,9 +13,6 @@ class PostSerializer(serializers.ModelSerializer):
     comments_count = serializers.ReadOnlyField()
     reviews_count = serializers.ReadOnlyField()
     average_rating = serializers.ReadOnlyField()
-    category = serializers.SlugRelatedField(
-        queryset=Category.objects.all(), slug_field="name"
-    )
 
     def validate_image(self, value):
         if value.size > 2 * 1024 * 1024:
@@ -50,5 +47,5 @@ class PostSerializer(serializers.ModelSerializer):
             'profile_image', 'created_at', 'updated_at',
             'title', 'content', 'image', 'image_filter',
             'like_id', 'likes_count', 'comments_count',
-            'reviews_count', 'average_rating', 'category',
+            'reviews_count', 'average_rating', 
         ]

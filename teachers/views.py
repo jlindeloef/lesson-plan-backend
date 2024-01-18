@@ -25,8 +25,9 @@ class TeacherList(generics.ListCreateAPIView):
 
     search_fields = [
         'owner__username',
-        'speciality',
-        'location'
+        'teacher',
+        'location',
+        'school',
     ]
 
     def perform_create(self, serializer):

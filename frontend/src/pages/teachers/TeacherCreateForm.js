@@ -20,10 +20,10 @@ const TeacherCreateForm = () => {
   const id = currentUser?.profile_id;
 
   const [teacherData, setTeacherData] = useState({
-    teacher: "",
-    school: "",
-    location: "",
-    email: "",
+    teacher: " ",
+    school: " ",
+    location: " ",
+    email: " ",
   });
   const {
     teacher, school, location, email, 

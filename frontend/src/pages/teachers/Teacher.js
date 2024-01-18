@@ -1,13 +1,15 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import Media from "react-bootstrap/Media";
-
+import { axiosRes } from "../../api/axiosDefaults";
 import { Link, useHistory } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import Avatar from "../../components/Avatar";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import btnStyles from "../../styles/Button.module.css";
 import styles from "../../styles/Post.module.css";
+import TeachersPage from "./TeachersPage";
+import { MoreDropdown } from "../../components/MoreDropdown";
 
 // component renders artist information and statistics
 const Teacher = (props) => {
@@ -28,6 +30,19 @@ const Teacher = (props) => {
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
 
+  const handleEdit = () => {
+    history.push(`/teachers/create/`);
+  };
+
+  const handleDelete = async () => {
+    try {
+      await axiosRes.delete(`/teachers/${id}/`);
+      history.goBack();
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <Card className={styles.Post}>
       <Card.Body>
@@ -37,11 +52,17 @@ const Teacher = (props) => {
               <Avatar src={profile_image} height={100} />
               {owner}
             </Link>
+            {is_owner && TeachersPage && (
+          <MoreDropdown
+            handleDelete={handleDelete}
+            handleEdit={handleEdit}
+          />
+        )}
           </Media>
         )}
         <p className="text-center">
-          Teacher:
-          {teacher}
+          Teacher: 
+           {teacher}
         </p>
         <p className="text-center">
           School:
