@@ -64,7 +64,7 @@ DEBUG = 'DEBUG' in os.environ
 
 ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_HOST'),
-    'localhost',
+    'localhost','lesson-plan-a44885014d75.herokuapp.com',
 ]
 
 
