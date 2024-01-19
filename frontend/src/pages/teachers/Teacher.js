@@ -28,7 +28,7 @@ const Teacher = (props) => {
   const history = useHistory();
 
   const handleEdit = () => {
-    history.push(`/teachers/create/`);
+    history.push(`/teachers/${id}/edit`);
   };
 
   const handleDelete = async () => {

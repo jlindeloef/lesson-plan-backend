@@ -16,6 +16,7 @@ import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import TeachersPage from "./pages/teachers/TeachersPage";
 import TeacherCreateForm from "./pages/teachers/TeacherCreateForm";
+import TeacherEditForm from "./pages/teachers/TeacherEditForm";
 import ReviewsPage from "./pages/reviews/ReviewsPage";
 import ReviewCreateForm from "./pages/reviews/ReviewCreateForm";
 
@@ -85,6 +86,11 @@ function App() {
             exact
             path="/teachers/create/"
             render={() => <TeacherCreateForm />}
+          />
+          <Route
+            exact
+            path="/teachers/:id/edit"
+            render={() => <TeacherEditForm />}
           />
           <Route
             exact
