@@ -55,6 +55,12 @@ const TeachersPage = ({ message, filter = "" }) => {
       </Col>
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <PopularProfiles mobile />
+        <p>As a teacher you register to the teachers list so other teacher can find you for colaboration.<br />
+          <Link className={styles.Link} to="/teachers/create">
+            Aren't you a teacher?<span> Sign up now!</span>
+          </Link>
+        </p>
+        <h1>Teachers</h1>
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form
           className={styles.SearchBar}
@@ -71,12 +77,6 @@ const TeachersPage = ({ message, filter = "" }) => {
 
         {hasLoaded ? (
           <>
-            <h1>Teachers</h1>
-            <p>As a teacher you register to the teachers list so other teacher can find you for colaboration.<br />
-            <Link className={styles.Link} to="/teachers/create">
-            Aren't you a teacher?<span> Sign up now!</span>
-          </Link>
-            </p>
             {teachers.results.length ? (
               <InfiniteScroll
                 children={teachers.results.map((teacher) => (

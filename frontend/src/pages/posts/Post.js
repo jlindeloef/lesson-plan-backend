@@ -159,7 +159,7 @@ const Post = (props) => {
             onClick={() => history.push(`/reviews/${id}`)}
             aria-label="view-reviews"
           >
-            Posts Reviews
+            Lesson Reviews
           </Button>
         )}
       </Card.Body>

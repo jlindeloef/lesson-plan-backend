@@ -90,3 +90,23 @@ export const ProfileEditDropdown = ({ id }) => {
     </Dropdown>
   );
 };
+// component to render as part of profile
+// so that options are hidden in a dropdown menu 
+export const TeacherDropdown = ({ handleDelete }) => {
+  const history = useHistory();
+
+  return (
+    <Dropdown className={`ml-auto px-2 ${styles.Absolute}`} drop="left">
+      <Dropdown.Toggle as={ThreeDots} />
+      <Dropdown.Menu>
+      <Dropdown.Item
+        className={styles.DropdownItem2}
+        onClick={handleDelete}
+        aria-label="delete"
+      >
+        <i className="fas fa-trash-alt" />
+      </Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+  );
+};

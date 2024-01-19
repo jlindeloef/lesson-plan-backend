@@ -7,7 +7,7 @@ import Avatar from "../../components/Avatar";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import styles from "../../styles/Post.module.css";
 import TeachersPage from "./TeachersPage";
-import { MoreDropdown } from "../../components/MoreDropdown";
+import { TeacherDropdown } from "../../components/MoreDropdown";
 
 // component renders artist information and statistics
 const Teacher = (props) => {
@@ -50,9 +50,8 @@ const Teacher = (props) => {
               {owner}
             </Link>
             {is_owner && TeachersPage && (
-          <MoreDropdown
+          <TeacherDropdown
             handleDelete={handleDelete}
-            handleEdit={handleEdit}
           />
         )}
           </Media>
