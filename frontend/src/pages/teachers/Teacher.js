@@ -8,6 +8,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import styles from "../../styles/Post.module.css";
 import TeachersPage from "./TeachersPage";
 import { TeacherDropdown } from "../../components/MoreDropdown";
+import Container from "react-bootstrap/Container";
 
 // component renders artist information and statistics
 const Teacher = (props) => {
@@ -53,21 +54,21 @@ const Teacher = (props) => {
           </Media>
         )}
         <p className="text-center">
-          Teacher: 
+        <strong>Teacher: </strong> 
            {teacher}
         </p>
         <p className="text-center">
-          School:
+        <strong>School: </strong>
           {school}
         </p>
         <p className="text-center">
-          Location:
+        <strong>Location: </strong>
           {location}
         </p>
         <p className="text-center">
-          Email:
+        <strong>Email: </strong>
           {email}
-        </p> 
+        </p>
       </Card.Body>
     </Card>
   );

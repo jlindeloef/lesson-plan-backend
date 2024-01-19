@@ -11,7 +11,7 @@ import Teacher from "./Teacher";
 import Asset from "../../components/Asset";
 
 import appStyles from "../../App.module.css";
-import styles from "../../styles/TeacherCreateForm.module.css";
+import styles from "../../styles/PostsPage.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
 import { Link } from "react-router-dom";
 import NoResults from "../../assets/no-results.png";
@@ -55,17 +55,19 @@ const TeachersPage = ({ message, filter = "" }) => {
       </Col>
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <PopularProfiles mobile />
+        <h1>Teachers</h1>
         <p>As a teacher you register to the teachers list so other teacher can find you for colaboration.<br />
+          Aren't you a registered teacher?
           <Link className={styles.Link}  to="/teachers/create">
-            Aren't you a teacher?<span> Sign up now!</span>
+            <span> <strong> Sign up now!</strong></span>
           </Link>
         </p>
-        <h1>Teachers</h1>
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form
           className={styles.SearchBar}
           onSubmit={(event) => event.preventDefault()}
         >
+      
           <Form.Control
             value={query}
             onChange={(event) => setQuery(event.target.value)}
@@ -74,7 +76,7 @@ const TeachersPage = ({ message, filter = "" }) => {
             placeholder="Search teachers by name, location or school"
           />
         </Form>
-
+        
         {hasLoaded ? (
           <>
             {teachers.results.length ? (

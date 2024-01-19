@@ -1,9 +1,4 @@
-p {
+strong {
     font-weight: bold;
     align-content: center;
-}
-
-.linktext {
-    align-content: center;
-    text-decoration: underline; 
 }
