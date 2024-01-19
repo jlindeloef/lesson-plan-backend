@@ -11,7 +11,7 @@ import Teacher from "./Teacher";
 import Asset from "../../components/Asset";
 
 import appStyles from "../../App.module.css";
-import styles from "../../styles/PostsPage.module.css";
+import styles from "../../styles/TeacherCreateForm.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
 import { Link } from "react-router-dom";
 import NoResults from "../../assets/no-results.png";
@@ -56,7 +56,7 @@ const TeachersPage = ({ message, filter = "" }) => {
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <PopularProfiles mobile />
         <p>As a teacher you register to the teachers list so other teacher can find you for colaboration.<br />
-          <Link className={styles.Link} to="/teachers/create">
+          <Link className={styles.Link}  to="/teachers/create">
             Aren't you a teacher?<span> Sign up now!</span>
           </Link>
         </p>

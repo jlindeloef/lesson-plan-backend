@@ -93,7 +93,6 @@ export const ProfileEditDropdown = ({ id }) => {
 // component to render as part of profile
 // so that options are hidden in a dropdown menu 
 export const TeacherDropdown = ({ handleDelete }) => {
-  const history = useHistory();
 
   return (
     <Dropdown className={`ml-auto px-2 ${styles.Absolute}`} drop="left">

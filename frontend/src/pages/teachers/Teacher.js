@@ -27,10 +27,6 @@ const Teacher = (props) => {
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
 
-  const handleEdit = () => {
-    history.push(`/teachers/${id}/edit`);
-  };
-
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/teachers/${id}/`);
