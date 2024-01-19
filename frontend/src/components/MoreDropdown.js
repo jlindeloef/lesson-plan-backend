@@ -46,7 +46,7 @@ export const MoreDropdown = ({ handleEdit, handleDelete }) => (
 
 // component to render as part of profile
 // so that options are hidden in a dropdown menu 
-export const ProfileEditDropdown = ({ id, handleDeleteArtist }) => {
+export const ProfileEditDropdown = ({ id }) => {
   const history = useHistory();
 
   return (
@@ -79,12 +79,12 @@ export const ProfileEditDropdown = ({ id, handleDeleteArtist }) => {
           change password
         </Dropdown.Item>
         <Dropdown.Item
-          // sends user to the create artist form
-          onClick={() => history.push("/artists/create")}
-          aria-label="add-artist"
+          // sends user to the create teacher form
+          onClick={() => history.push("/teachers/create")}
+          aria-label="add-teacher"
         >
           <i className="fas fa-plus-square" />
-          register as artist
+          register as a Teacher
         </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>

@@ -3,10 +3,8 @@ import Card from "react-bootstrap/Card";
 import Media from "react-bootstrap/Media";
 import { axiosRes } from "../../api/axiosDefaults";
 import { Link, useHistory } from "react-router-dom";
-import { Button } from "react-bootstrap";
 import Avatar from "../../components/Avatar";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import btnStyles from "../../styles/Button.module.css";
 import styles from "../../styles/Post.module.css";
 import TeachersPage from "./TeachersPage";
 import { MoreDropdown } from "../../components/MoreDropdown";
@@ -23,7 +21,6 @@ const Teacher = (props) => {
     location,
     email,
     isProfilePage,
-    showAll,
   } = props;
 
   const currentUser = useCurrentUser();
