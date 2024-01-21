@@ -55,7 +55,7 @@ const TeachersPage = ({ message, filter = "" }) => {
       </Col>
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <PopularProfiles mobile />
-        <h1>Feachers</h1>
+        <h1>Teachers</h1>
         <p>As a teacher you register to the teachers list so other teacher can find you for colaboration.<br />
           Aren't you a registered teacher?
           <Link className={styles.Link}  to="/teachers/create">
