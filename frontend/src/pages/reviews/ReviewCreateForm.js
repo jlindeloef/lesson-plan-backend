@@ -93,12 +93,12 @@ const ReviewCreateForm = () => {
       ))}
 
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
+        className={`${btnStyles.Button} ${btnStyles.Bright}`}
         onClick={() => history.goBack()}
       >
         Cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+      <Button className={`${btnStyles.Button} ${btnStyles.Bright}`} type="submit">
         Save
       </Button>
     </div>

@@ -127,10 +127,10 @@ const TeacherCreateForm = () => {
         </Alert>
       ))}
 
-      <Button className={btnStyles.Button} onClick={() => history.goBack()}>
+      <Button className={`${btnStyles.Button} ${btnStyles.Bright}`} onClick={() => history.goBack()}>
         Cancel
       </Button>
-      <Button className={btnStyles.Button} type="submit">
+      <Button className={`${btnStyles.Button} ${btnStyles.Bright}`} type="submit">
         Create
       </Button>
     </div>
