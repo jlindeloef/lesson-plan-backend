@@ -136,5 +136,4 @@ const TeacherEditForm = () => {
     </Form>
   );
 };
-
 export default TeacherEditForm;
