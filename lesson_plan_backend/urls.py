@@ -33,7 +33,6 @@ urlpatterns = [
     path('api/', include('comments.urls')),
     path('api/', include('likes.urls')),
     path('api/', include('followers.urls')),
-    path('api/category/',include('category.urls')),
     path('api/', include('reviews.urls')),
     path('api/', include('teachers.urls')),
 ]
