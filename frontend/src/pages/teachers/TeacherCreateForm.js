@@ -52,9 +52,9 @@ const TeacherCreateForm = () => {
 
 
     try {
-      // make request to database to create a new artist
+      // make request to database to create a new teacher
       const { data } = await axiosReq.post("/teachers/", formData);
-      // add artist id to the users profile
+      // add teacher id to the users profile
       await axiosRes.put(`/profiles/${id}/`, { teacherId: data.id });
       // goes back to the page the user was on
       history.goBack(`/teachers/`);
@@ -71,9 +71,9 @@ const TeacherCreateForm = () => {
       <Col className="my-auto py-2 p-md-2" md={{ span: 6, offset: 3 }}>
       <Container className={`${appStyles.ContentGrey} p-4 `}>
       <h1 className={styles.Header}>Register as a Teacher</h1>
-      <Form onSubmit={handleSubmit}>
+      <Form>
       <div className="text-center">
-      <Form.Group>
+      <Form.Group controlId="teacher">
         <Form.Label>Teacher</Form.Label>
         <Form.Control
           type="text"
@@ -91,7 +91,7 @@ const TeacherCreateForm = () => {
       ))}
 
 
-      <Form.Group>
+      <Form.Group controlId="school">
         <Form.Label>School</Form.Label>
         <Form.Control
           type="text"
@@ -108,7 +108,7 @@ const TeacherCreateForm = () => {
       ))}
 
 
-      <Form.Group>
+      <Form.Group controlId="location">
         <Form.Label>Location</Form.Label>
         <Form.Control
           type="text"
@@ -126,7 +126,7 @@ const TeacherCreateForm = () => {
       ))}
 
 
-      <Form.Group>
+      <Form.Group controlId="email">
         <Form.Label>Email address</Form.Label>
         <Form.Control
           type="email"
@@ -151,6 +151,11 @@ const TeacherCreateForm = () => {
       <Button className={`${btnStyles.Button} ${btnStyles.Bright}`} type="submit">
         Create
       </Button>
+      {errors.non_field_errors?.map((message, idx) => (
+              <Alert key={idx} variant="warning" className="mt-3">
+                {message}
+              </Alert>
+            ))}
       </Container>
       </Col>
     </Row>
