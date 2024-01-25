@@ -10,7 +10,7 @@ const PopularProfiles = ({ mobile }) => {
 
   return (
     <Container
-      className={`${appStyles.Content} ${
+      className={`${appStyles.ContentWhite} ${
         mobile && "d-lg-none text-center mb-3"
       }`}
     >

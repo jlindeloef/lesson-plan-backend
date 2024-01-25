@@ -9,6 +9,7 @@ import styles from "../../styles/Post.module.css";
 import TeachersPage from "./TeachersPage";
 import { TeacherDropdown } from "../../components/MoreDropdown";
 
+
 // component renders artist information and statistics
 const Teacher = (props) => {
   const {
@@ -23,9 +24,11 @@ const Teacher = (props) => {
     isProfilePage,
   } = props;
 
+
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
+
 
   const handleDelete = async () => {
     try {
@@ -34,7 +37,9 @@ const Teacher = (props) => {
     } catch (err) {
       console.log(err);
     }
+
   };
+
 
   return (
     <Card className={styles.Post}>
@@ -46,26 +51,26 @@ const Teacher = (props) => {
               {owner}
             </Link>
             {is_owner && TeachersPage && (
-          <TeacherDropdown
-            handleDelete={handleDelete}
-          />
-        )}
+              <TeacherDropdown
+                handleDelete={handleDelete}
+              />
+            )}
           </Media>
         )}
         <p className="text-center">
-        <strong>Teacher: </strong> 
-           {teacher}
+          <strong>Teacher: </strong>
+          {teacher}
         </p>
         <p className="text-center">
-        <strong>School: </strong>
+          <strong>School: </strong>
           {school}
         </p>
         <p className="text-center">
-        <strong>Location: </strong>
+          <strong>Location: </strong>
           {location}
         </p>
         <p className="text-center">
-        <strong>Email: </strong>
+          <strong>Email: </strong>
           {email}
         </p>
       </Card.Body>

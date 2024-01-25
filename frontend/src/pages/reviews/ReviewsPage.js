@@ -81,7 +81,7 @@ const ReviewsPage = ({ message }) => {
             )}
           </>
         ) : (
-          <Container className={appStyles.Content}>
+          <Container className={appStyles.ContentWhite}>
             <Asset spinner />
           </Container>
         )}

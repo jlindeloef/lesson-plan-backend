@@ -19,7 +19,7 @@
     text-align: center;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #21b234;
+    color: #000000;
   }
   
   .Link {
@@ -46,3 +46,5 @@
   .SignUpCol {
     height: 375px;
   }
+
+  

@@ -10,12 +10,16 @@ import btnStyles from "../../styles/Button.module.css";
 import { axiosReq, axiosRes } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import styles from "../../styles/SignInUpForm.module.css";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 // Form to gather and post data to database for a new artist registration
 const TeacherCreateForm = () => {
   // redirect to home page if user is not logged in
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
+  
   const currentUser = useCurrentUser();
   const id = currentUser?.profile_id;
 
@@ -26,9 +30,8 @@ const TeacherCreateForm = () => {
     email: " ",
   });
   const {
-    teacher, school, location, email, 
+    teacher, school, location, email,
   } = teacherData;
-
   const history = useHistory();
 
   const handleChange = (event) => {
@@ -46,7 +49,7 @@ const TeacherCreateForm = () => {
     formData.append("school", school);
     formData.append("location", location);
     formData.append("email", email);
-    
+
 
     try {
       // make request to database to create a new artist
@@ -54,7 +57,7 @@ const TeacherCreateForm = () => {
       // add artist id to the users profile
       await axiosRes.put(`/profiles/${id}/`, { teacherId: data.id });
       // goes back to the page the user was on
-      history.goBack();
+      history.goBack(`/teachers/`);
     } catch (err) {
       // display any error for form validation
       if (err.response?.status !== 401) {
@@ -66,35 +69,41 @@ const TeacherCreateForm = () => {
   const textFields = (
     <div className="text-center">
 
+
       <Form.Group>
         <Form.Label>Teacher</Form.Label>
         <Form.Control
           type="text"
+          placeholder="Username"
           name="teacher"
+          className={styles.Input}
           value={teacher}
           onChange={handleChange}
         />
       </Form.Group>
-      {errors?.title?.map((message, idx) => (
+      {errors?.teacher?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
       ))}
+
 
       <Form.Group>
         <Form.Label>School</Form.Label>
         <Form.Control
           type="text"
           name="school"
+          className={styles.Input}
           value={school}
           onChange={handleChange}
         />
       </Form.Group>
-      {errors?.title?.map((message, idx) => (
+      {errors?.school?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
       ))}
+
 
       <Form.Group>
         <Form.Label>Location</Form.Label>
@@ -102,30 +111,34 @@ const TeacherCreateForm = () => {
           type="text"
           rows={6}
           name="location"
+          className={styles.Input}
           value={location}
           onChange={handleChange}
         />
       </Form.Group>
-      {errors?.content?.map((message, idx) => (
+      {errors?.location?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
       ))}
+
 
       <Form.Group>
         <Form.Label>Email address</Form.Label>
         <Form.Control
           type="email"
           name="email"
+          className={styles.Input}
           value={email}
           onChange={handleChange}
         />
       </Form.Group>
-      {errors?.title?.map((message, idx) => (
+      {errors?.email?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
       ))}
+
 
       <Button className={`${btnStyles.Button} ${btnStyles.Bright}`} onClick={() => history.goBack()}>
         Cancel
@@ -136,11 +149,13 @@ const TeacherCreateForm = () => {
     </div>
   );
 
+
   return (
     <Form onSubmit={handleSubmit}>
       <Container className={appStyles.Content}>{textFields}</Container>
     </Form>
   );
 };
+
 
 export default TeacherCreateForm;

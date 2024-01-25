@@ -55,8 +55,9 @@ function SignInForm() {
         <Container className={`${appStyles.Content} p-4 `}>
           <h1 className={styles.Header}>sign in</h1>
           <Form onSubmit={handleSubmit}>
+            <div className="text-center">
             <Form.Group controlId="username">
-              <Form.Label className="d-none">Username</Form.Label>
+              <Form.Label className="text-center">Username</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Username"
@@ -73,7 +74,7 @@ function SignInForm() {
             ))}
 
             <Form.Group controlId="password">
-              <Form.Label className="d-none">Password</Form.Label>
+              <Form.Label>Password</Form.Label>
               <Form.Control
                 type="password"
                 placeholder="Password"
@@ -99,6 +100,7 @@ function SignInForm() {
                 {message}
               </Alert>
             ))}
+            </div>
           </Form>
           <Link className={styles.Link} to="/signup">
             Don't have an account? <span>Sign up now!</span>
