@@ -49,14 +49,6 @@ const NavBar = () => {
       <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
-        to="/teachers"
-      >
-        <i className="fa-solid fa-graduation-cap" />
-        Teachers colaboration
-      </NavLink>
-      <NavLink
-        className={styles.NavLink}
-        activeClassName={styles.Active}
         to="/feed"
       >
         <i className="fas fa-stream" />
@@ -69,6 +61,14 @@ const NavBar = () => {
       >
         <i className="fas fa-heart" />
         Liked
+      </NavLink>
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/teachers"
+      >
+        <i className="fa-solid fa-graduation-cap" />
+        Teachers colaboration
       </NavLink>
       <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
         <i className="fas fa-sign-out-alt" />
