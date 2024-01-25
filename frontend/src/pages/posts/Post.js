@@ -78,7 +78,7 @@ const Post = (props) => {
       console.log(err);
     }
   };
-  const loggedInIcons = (
+  const loggedIn = (
     <>
     <div className={styles.PostBar}>
           {is_owner ? (
@@ -131,7 +131,7 @@ const Post = (props) => {
     </>
   );
 
-  const loggedOutIcons = (
+  const loggedOut = (
     <>
     <Card>
     To comment, like and leave a review
@@ -177,7 +177,7 @@ const Post = (props) => {
           {" "}
           reviews
         </p>
-        {currentUser ? loggedInIcons : loggedOutIcons}
+        {currentUser ? loggedIn : loggedOut}
        
       </Card.Body>
       

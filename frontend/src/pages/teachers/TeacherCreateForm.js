@@ -14,7 +14,7 @@ import styles from "../../styles/SignInUpForm.module.css";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
-// Form to gather and post data to database for a new artist registration
+// Form to gather and post data to database for a new teacher registration
 const TeacherCreateForm = () => {
   // redirect to home page if user is not logged in
   useRedirect("loggedOut");

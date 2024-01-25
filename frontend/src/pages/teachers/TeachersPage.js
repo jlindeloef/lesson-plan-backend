@@ -61,7 +61,6 @@ const TeachersPage = ({ message, filter = "" }) => {
             <span><strong> Register now!</strong></span>
           </Link>
         </p>
-
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form
           className={styles.SearchBar}
