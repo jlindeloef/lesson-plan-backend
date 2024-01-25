@@ -9,14 +9,14 @@
 }
 
 .Content {
-  background-color: #b0b0b0;
+  background-color: #ffffff;
   padding: 10px;
   border-radius: 2px;
   border: 1px solid #dadadf;
 }
 
-.ContentWhite {
-  background-color:  #ffffff;
+.ContentGrey {
+  background-color:  #b0b0b0;
   padding: 10px;
   border-radius: 2px;
   border: 1px solid #dadadf;

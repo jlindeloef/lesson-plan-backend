@@ -67,9 +67,12 @@ const TeacherCreateForm = () => {
   };
 
   const textFields = (
-    <div className="text-center">
-
-
+    <Row className="text-center">
+      <Col className="my-auto py-2 p-md-2" md={{ span: 6, offset: 3 }}>
+      <Container className={`${appStyles.ContentGrey} p-4 `}>
+      <h1 className={styles.Header}>Register as a Teacher</h1>
+      <Form onSubmit={handleSubmit}>
+      <div className="text-center">
       <Form.Group>
         <Form.Label>Teacher</Form.Label>
         <Form.Control
@@ -138,6 +141,8 @@ const TeacherCreateForm = () => {
           {message}
         </Alert>
       ))}
+      </div>
+      </Form>
 
 
       <Button className={`${btnStyles.Button} ${btnStyles.Bright}`} onClick={() => history.goBack()}>
@@ -146,13 +151,15 @@ const TeacherCreateForm = () => {
       <Button className={`${btnStyles.Button} ${btnStyles.Bright}`} type="submit">
         Create
       </Button>
-    </div>
+      </Container>
+      </Col>
+    </Row>
   );
 
 
   return (
     <Form onSubmit={handleSubmit}>
-      <Container className={appStyles.Content}>{textFields}</Container>
+      <Container>{textFields}</Container>
     </Form>
   );
 };

@@ -137,7 +137,6 @@ const NavBar = () => {
               <i className="fas fa-home" />
               Home
             </NavLink>
-
             {currentUser ? loggedInIcons : loggedOutIcons}
           </Nav>
         </Navbar.Collapse>

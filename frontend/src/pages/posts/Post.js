@@ -78,33 +78,9 @@ const Post = (props) => {
       console.log(err);
     }
   };
-
-  return (
-    <Card className={styles.Post} >
-      <Card.Body>
-        <Media className="align-items-center justify-content-between">
-          <Link to={`/profiles/${profile_id}`}>
-            <Avatar src={profile_image} height={55} />
-            {owner}
-          </Link>
-          <div className="d-flex align-items-center">
-            <span>{updated_at}</span>
-            {is_owner && postPage && (
-              <MoreDropdown
-                handleEdit={handleEdit}
-                handleDelete={handleDelete}
-              />
-            )}
-          </div>
-        </Media>
-      </Card.Body>
-      <Link to={`/posts/${id}`}>
-        <Card.Img src={image} alt={title} />
-      </Link>
-      <Card.Body>
-        {title && <Card.Title className="text-center">{title}</Card.Title>}
-        {content && <Card.Text >{content}</Card.Text>}
-        <div className={styles.PostBar}>
+  const loggedInIcons = (
+    <>
+    <div className={styles.PostBar}>
           {is_owner ? (
             <OverlayTrigger
               placement="top"
@@ -134,16 +110,6 @@ const Post = (props) => {
           </Link>
           {comments_count}
         </div>
-        <p className="text-center">
-          Rating:
-          {" "}
-          <Rating readonly initialValue={average_rating} size={25} />
-        </p>
-        <p>
-          {reviews_count}
-          {" "}
-          reviews
-        </p>
         {!is_owner && (
           <Button
             className={`${btnStyles.Button} ${btnStyles.Bright}`}
@@ -162,7 +128,59 @@ const Post = (props) => {
             Lesson Reviews
           </Button>
         )}
+    </>
+  );
+
+  const loggedOutIcons = (
+    <>
+    <Card>
+    To comment, like and leave a review
+      <Link className={styles.Links}
+        to="/signup"
+      ><strong>Sign up now!</strong>
+      </Link>
+      </Card>
+    </>
+  );
+  return (
+    <Card className={styles.Post} >
+      <Card.Body>
+        <Media className="align-items-center justify-content-between">
+          <Link to={`/profiles/${profile_id}`}>
+            <Avatar src={profile_image} height={55} />
+            {owner}
+          </Link>
+          <div className="d-flex align-items-center">
+            <span>{updated_at}</span>
+            {is_owner && postPage && (
+              <MoreDropdown
+                handleEdit={handleEdit}
+                handleDelete={handleDelete}
+              />
+            )}
+          </div>
+        </Media>
       </Card.Body>
+      <Link to={`/posts/${id}`}>
+        <Card.Img src={image} alt={title} />
+      </Link>
+      <Card.Body>
+        {title && <Card.Title className="text-center">{title}</Card.Title>}
+        {content && <Card.Text >{content}</Card.Text>}
+        <p className="text-center">
+          Rating:
+          {" "}
+          <Rating readonly initialValue={average_rating} size={25} />
+        </p>
+        <p>
+          {reviews_count}
+          {" "}
+          reviews
+        </p>
+        {currentUser ? loggedInIcons : loggedOutIcons}
+       
+      </Card.Body>
+      
     </Card>
   );
 };

@@ -16,4 +16,13 @@
     cursor: default;
     color: #cfced3;
   }
+
+  .Linksreg {
+    
+    text-align: center;
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+    text-decoration-line: underline;
+  }
  

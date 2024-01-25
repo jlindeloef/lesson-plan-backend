@@ -56,12 +56,12 @@ const TeachersPage = ({ message, filter = "" }) => {
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <PopularProfiles mobile />
         <h1>Teachers</h1>
-        <p>As a teacher you register to the teachers list so other teacher can find you for colaboration.<br />
-          Aren't you a registered teacher?
-          <Link className={styles.Link}  to="/teachers/create">
-            <span> <strong> Sign up now!</strong></span>
+        <p>Register as a teacher for colaborations.
+          <Link className={styles.Linksreg}  to="/teachers/create">
+            <span><strong> Register now!</strong></span>
           </Link>
         </p>
+
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form
           className={styles.SearchBar}
@@ -96,7 +96,7 @@ const TeachersPage = ({ message, filter = "" }) => {
             )}
           </>
         ) : (
-          <Container className={appStyles.ContentWhite}>
+          <Container className={appStyles.Content}>
             <Asset spinner />
           </Container>
         )}
