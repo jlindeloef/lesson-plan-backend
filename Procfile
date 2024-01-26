@@ -1,1 +1,1 @@
-web: serve -s build
+web: gunicorn lesson_plan_backend.wsgi
