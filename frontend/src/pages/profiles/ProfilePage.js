@@ -143,6 +143,8 @@ function ProfilePage() {
           {hasLoaded ? (
             <>
               {mainProfile}
+              <h3 className="m-2">{profile?.owner}</h3>
+          {profile?.teacherId && <p>I am an artist</p>}
               {mainProfilePosts}
             </>
           ) : (

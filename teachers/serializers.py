@@ -12,7 +12,6 @@ class TeacherSerializer(serializers.ModelSerializer):
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
-    
 
     def get_is_owner(self, obj):
         """
@@ -30,6 +29,6 @@ class TeacherSerializer(serializers.ModelSerializer):
         model = Teacher
         fields = [
             'id', 'owner', 'is_owner', 'profile_id', 'profile_image',
-            'profile_image', 'teacher','school', 'location',
+            'profile_image', 'teacher', 'school', 'location',
             'email', 'created_at', 'updated_at',
         ]
