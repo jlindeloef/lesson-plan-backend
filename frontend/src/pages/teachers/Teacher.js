@@ -10,7 +10,7 @@ import TeachersPage from "./TeachersPage";
 import { TeacherDropdown } from "../../components/MoreDropdown";
 
 
-// component renders artist information and statistics
+// component renders teacher information and statistics
 const Teacher = (props) => {
   const {
     owner,
