@@ -133,13 +133,14 @@ const Post = (props) => {
 
   const loggedOut = (
     <>
-    <Card>
-    To comment, like and leave a review
+    <hr />
+    <div className="text-center">
+    To comment, like or leave a review
       <Link className={styles.Links}
         to="/signup"
       ><strong>Sign up now!</strong>
       </Link>
-      </Card>
+      </div>
     </>
   );
   return (

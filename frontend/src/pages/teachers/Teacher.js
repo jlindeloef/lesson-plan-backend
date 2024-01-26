@@ -8,7 +8,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import styles from "../../styles/Post.module.css";
 import TeachersPage from "./TeachersPage";
 import { TeacherDropdown } from "../../components/MoreDropdown";
-import appStyles from "../../App.module.css";
+
 
 // component renders artist information and statistics
 const Teacher = (props) => {
