@@ -19,6 +19,7 @@ import TeacherCreateForm from "./pages/teachers/TeacherCreateForm";
 import TeacherEditForm from "./pages/teachers/TeacherEditForm";
 import ReviewsPage from "./pages/reviews/ReviewsPage";
 import ReviewCreateForm from "./pages/reviews/ReviewCreateForm";
+import NotFound from "./components/NotFound";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -103,7 +104,7 @@ function App() {
             render={() => <ReviewCreateForm />}
           />
 
-          <Route render={() => <p>Page not found!</p>} />
+          <Route render={() => <NotFound />} />
         </Switch>
       </Container>
     </div>
