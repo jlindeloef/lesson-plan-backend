@@ -199,29 +199,30 @@ On the main page users find most popular profiles.
 
 ![create_review](https://github.com/jlindeloef/lesson-plan-backend/assets/141724002/58582303-3a17-4ba1-b2a2-86551efb35a8)
 
- Create a review. After createed a view users will be redirected to the review page.
+ - Create a review. After created a view users will be redirected to the review page.
  
- ![viewreview](https://github.com/jlindeloef/lesson-plan-backend/blob/main/readmedocs/images/view_reviews.png)
+ ![view_reviews](https://github.com/jlindeloef/lesson-plan-backend/assets/141724002/5aed0b13-8cd8-4d77-9dc3-b2b9b1f80a0c)
  
- Read reviews
+ - Read reviews
  
- ![like_comment](https://github.com/jlindeloef/lesson-plan-backend/blob/main/readmedocs/images/like_comment_icons.png)
+ ![like_comment_icons](https://github.com/jlindeloef/lesson-plan-backend/assets/141724002/36ad2c3e-521d-45b8-bda4-3eb9dd948c62)
  
- Like and comment icons on lessons. After the user click the like icons the heart turns read. If click on the comment icon the user will be redirected to the comment page.
+ - Like and comment icons on lessons. After the user click the like icons the heart turns read. If click on the comment icon the user will be redirected to the comment page.
  
- ![comments](https://github.com/jlindeloef/lesson-plan-backend/blob/main/readmedocs/images/comments.png)
+ ![comments](https://github.com/jlindeloef/lesson-plan-backend/assets/141724002/75655e1a-c989-4320-a179-ab6bc3374b1c)
  
- Read and add comments. After user add a comment, the comment will be published under the post.
+ - Read and add comments. After user add a comment, the comment will be published under the post.
 
 ![comment crud](https://github.com/jlindeloef/lesson-plan-backend/blob/main/readmedocs/images/edit_delete_comment.png)  
 
-The user can edit and delete their own comment by clicking the three dots in right-uper-corner.. The change will be made in the comment page and the user will not be redirected.
+- The user can edit and delete their own comment by clicking the three dots in right-uper-corner.. The change will be made in the comment page and the user will not be redirected.
  
  
 
 ![mpp logged in](https://github.com/jlindeloef/lesson-plan-backend/blob/main/readmedocs/images/most%20popular%20profiles.png)
   
-When logged in users can choose to follow or unfollow profiles.The most popular profiles will be viewed on every page exept for the edit/delete/create pages.
+- When logged in users can choose to follow or unfollow profiles.The most popular profiles will be viewed on every page exept for the edit/delete/create pages.
+
 + #### Liked and Feed pages.
   - The Liked and Feed pages contains the same as the main page only that:
     - Liked: Views the lessons you have liked.
