@@ -274,7 +274,7 @@ When logged in users can choose to follow or unfollow profiles.The most popular 
 Further there could be an about Us page, categories and subcategories to other subjects. More features for registered teachers e.g. chat forum, colaboration with lessons. Videos of lessons.
 
 ## Testing
-If you want to know more about my automated and manually testing you can click [here.](https://github.com/jlindeloef/drumworld/blob/main/Testing.md)
+If you want to know more about my automated and manually testing you can click [here.](https://github.com/jlindeloef/lesson-plan-backend/blob/main/Testing.md)
 + I tested the site, and it works in different web browsers: Chrome, Firefox, and Microsoft Edge.
 + On mobile devices, I tested the blog on a Samsung Galaxy A13 with the Samsung browser and an iPhone SE with the Safari browser.
 + I confirmed that the site is responsive and functions on different screen sizes using the devtools device toolbar.
