@@ -161,6 +161,7 @@ I have divided the feature section into two parts. What features depend on if yo
 + #### Main page
  
  ![Lesson logged out](https://github.com/jlindeloef/lesson-plan-backend/blob/main/readmedocs/images/lesson%20logged%20out.png)
+
  
   - Here the user find the lessons. The user can click on a lesson to be redirected to the whole lesson content and only read.
   - Every published lesson has an image, the user that has created the lesson and when it was published.
