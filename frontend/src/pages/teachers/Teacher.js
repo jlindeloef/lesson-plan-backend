@@ -37,7 +37,6 @@ const Teacher = (props) => {
     } catch (err) {
       console.log(err);
     }
-
   };
 
   return (

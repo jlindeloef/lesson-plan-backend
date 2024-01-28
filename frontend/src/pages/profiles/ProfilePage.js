@@ -25,9 +25,11 @@ import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/no-results.png";
 import { ProfileEditDropdown } from "../../components/MoreDropdown";
 
+
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [profilePosts, setProfilePosts] = useState({ results: [] });
+  
 
   const currentUser = useCurrentUser();
   const { id } = useParams();
@@ -37,6 +39,7 @@ function ProfilePage() {
 
   const [profile] = pageProfile.results;
   const is_owner = currentUser?.username === profile?.owner;
+ 
 
   useEffect(() => {
     const fetchData = async () => {
