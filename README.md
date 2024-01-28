@@ -160,7 +160,7 @@ I have divided the feature section into two parts. What features depend on if yo
 
 + #### Main page
  
- ![Lesson logged out](https://github.com/jlindeloef/lesson-plan-backend/blob/main/readmedocs/images/lesson%20logged%20out.png)
+ ![lesson logged out](https://github.com/jlindeloef/lesson-plan-backend/assets/141724002/1f796434-3426-42c0-ad6d-acd816c9ad4c)
 
  
   - Here the user find the lessons. The user can click on a lesson to be redirected to the whole lesson content and only read.
@@ -169,12 +169,12 @@ I have divided the feature section into two parts. What features depend on if yo
   - Recent published lesson displays as the first lesson.
 
 
-![searchbar main](https://github.com/jlindeloef/lesson-plan-backend/blob/main/readmedocs/images/searchbar%20main.png)
+![searchbar main](https://github.com/jlindeloef/lesson-plan-backend/assets/141724002/b859e328-5ce4-4040-84aa-7b4b58f07ba4)
 
 Users can also search for lessons using the searchbar.
 
 
- ![mpp logged out](https://github.com/jlindeloef/lesson-plan-backend/blob/main/readmedocs/images/most%20poppro%20logged%20out.png)
+ ![most poppro logged out](https://github.com/jlindeloef/lesson-plan-backend/assets/141724002/38d44f34-3ac3-4c8c-95c9-f82ed34f3e07)
 
 On the main page users find most popular profiles.
 
@@ -192,12 +192,12 @@ On the main page users find most popular profiles.
 
 + #### Main page
 
- ![Lesson logged in](https://github.com/jlindeloef/lesson-plan-backend/blob/main/readmedocs/images/lesson.png)
+ ![lesson](https://github.com/jlindeloef/lesson-plan-backend/assets/141724002/9cfa9687-4a8d-4636-a2f4-6d6e446eab4b)
  
  except what the user can do when logged out, the user can:
    - The user can like, comment and review and read reviews of a lesson.
 
-![create review](https://github.com/jlindeloef/lesson-plan-backend/blob/main/readmedocs/images/create_review.png)
+![create_review](https://github.com/jlindeloef/lesson-plan-backend/assets/141724002/58582303-3a17-4ba1-b2a2-86551efb35a8)
 
  Create a review. After createed a view users will be redirected to the review page.
  
